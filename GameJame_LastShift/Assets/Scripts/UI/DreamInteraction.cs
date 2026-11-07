@@ -13,7 +13,7 @@ public class DreamInteraction : MonoBehaviour
     {
         if (Keyboard.current.eKey.isPressed && inRange)
         {
-            flash.StartFlash(gradiantDuration, 0.50f, 0.25f, Color.white);
+            flash.StartFlash(gradiantDuration, gradiantDuration/2, 0.75f, Color.white);
         }
     }
 
