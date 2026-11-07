@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &178396920
+--- !u!1 &47980441
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,73 +127,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 178396921}
-  - component: {fileID: 178396923}
-  - component: {fileID: 178396922}
-  m_Layer: 5
-  m_Name: DreamOne
+  - component: {fileID: 47980442}
+  m_Layer: 0
+  m_Name: DreamUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &178396921
-RectTransform:
+  m_IsActive: 1
+--- !u!4 &47980442
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178396920}
+  m_GameObject: {fileID: 47980441}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.9677, y: 5.9677, z: 5.9677}
+  m_LocalPosition: {x: 13.34162, y: -0, z: 40.58613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 811233757}
+  m_Children:
+  - {fileID: 193858279}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &178396922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178396920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ddcdede849a099b45a391c5b65357e1f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &178396923
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178396920}
-  m_CullTransparentMesh: 1
 --- !u!1 &193858277
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,12 +162,12 @@ GameObject:
   - component: {fileID: 193858279}
   - component: {fileID: 193858278}
   m_Layer: 5
-  m_Name: DreamUI
+  m_Name: DreamOneUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1931382934 &193858278
 PanelRenderer:
   m_ObjectHideFlags: 0
@@ -257,7 +214,7 @@ PanelRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   serializedVersion: 1
   m_PanelSettings: {fileID: 11400000, guid: 9fad01927f6bace4fa83ab4be7eaf286, type: 2}
@@ -277,12 +234,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193858277}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.34162, y: 0, z: -40.58613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 47980442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &269336164
 GameObject:
@@ -455,7 +412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85d1b0a582b23b42acf3b5fb8ae683d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DreamInteraction
-  dreamImage: {fileID: 178396920}
+  dreamPanel: {fileID: 193858277}
+  player: {fileID: 1909258651}
+  delayPanel: 2
   gradiantDuration: 2
   flash: {fileID: 492823076}
 --- !u!1 &467424556
@@ -789,7 +748,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 492823075}
-  - {fileID: 178396921}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1005,8 +963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec0d32918ce2d14793e9f8e7186eede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
-  walkSpeed: 4
-  sprintSpeed: 6
+  walkSpeed: 5
+  sprintSpeed: 7
 --- !u!54 &1909258652
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1487,5 +1445,5 @@ SceneRoots:
   - {fileID: 270801873}
   - {fileID: 269336166}
   - {fileID: 2125183283}
+  - {fileID: 47980442}
   - {fileID: 811233757}
-  - {fileID: 193858279}

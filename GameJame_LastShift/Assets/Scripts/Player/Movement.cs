@@ -14,10 +14,8 @@ public class Movement : MonoBehaviour
     private float currentSpeed;
     private float horizontalInput;
 
-    // Hanging
-    private bool canMove = true;
 
-    // Rotation
+    private bool canMove = true;
     private bool isRight = true;
         
     void Start()
@@ -85,6 +83,16 @@ public class Movement : MonoBehaviour
             velocity.x = targetMoveSpeed;
             rb.linearVelocity = velocity;
         }
+    }
+
+    public void disableMovement()
+    {
+        canMove = false;
+    }
+
+    public void enableMovement()
+    {
+        canMove = true;
     }
 
     // private void UpdateAnimations()
