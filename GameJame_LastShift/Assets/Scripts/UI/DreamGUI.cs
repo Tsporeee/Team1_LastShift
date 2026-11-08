@@ -7,7 +7,8 @@ public class DreamGUI : MonoBehaviour
     public PointTracker tracker;
     public DreamInteraction interaction;
 
-    private UIDocument _doc; 
+    public UIDocument doc; 
+    public GameObject[] HP;
     private Button _correctItem;
     
     private int wrongCount;
@@ -16,15 +17,13 @@ public class DreamGUI : MonoBehaviour
 
     void Awake()
     {
-        _doc = GetComponent<UIDocument>();
-
-        _correctItem = _doc.rootVisualElement.Q("CorrectItem") as Button;
+        _correctItem = doc.rootVisualElement.Q("CorrectItem") as Button;
         _correctItem.RegisterCallback<ClickEvent>(OnCorrectItemClick);
 
-         _doc.rootVisualElement.style.display = DisplayStyle.None;
+         doc.rootVisualElement.style.display = DisplayStyle.None;
 
         string buttonNamePrefix = "Incorrect";
-        List<Button> incorrectButtons = _doc.rootVisualElement.Query<Button>()
+        List<Button> incorrectButtons = doc.rootVisualElement.Query<Button>()
             .Where(b => b.name != null && b.name.StartsWith(buttonNamePrefix))
             .ToList();
 
@@ -32,7 +31,6 @@ public class DreamGUI : MonoBehaviour
         {
             incorrect.RegisterCallback<ClickEvent>(OnIncorrectItemClick);
         }
-        _doc.rootVisualElement.style.display = DisplayStyle.None;
     }
 
     void Update()
@@ -42,7 +40,7 @@ public class DreamGUI : MonoBehaviour
             hasFailed = true;
             tracker.incrementFailureCount();
             tracker.incrementPoints();
-            interaction.endDream(Color.black);
+            interaction.EndDream(Color.black);
         }
     }
 
@@ -55,7 +53,7 @@ public class DreamGUI : MonoBehaviour
     {
         Debug.Log("good job, Colin!");
         tracker.incrementPoints();
-        interaction.endDream(Color.yellow);
+        interaction.EndDream(Color.yellow);
     }
     private void OnIncorrectItemClick(ClickEvent evt)
     {
@@ -63,16 +61,25 @@ public class DreamGUI : MonoBehaviour
         wrongCount++;
         Button pressedButton = evt.target as Button;
         pressedButton.SetEnabled(false);
+        HP[HP.Length - wrongCount].SetActive(false);
     }
 
-    public void enablePanel()
+    public void EnablePanel()
     {
-         _doc.rootVisualElement.style.display = DisplayStyle.Flex;
+        doc.rootVisualElement.style.display = DisplayStyle.Flex;
+        foreach (GameObject scissor in HP)
+        {
+            scissor.SetActive(true);
+        }
     }
 
-    public void disablePanel()
+    public void DisablePanel()
     {
-        _doc.rootVisualElement.style.display = DisplayStyle.None;
+        doc.rootVisualElement.style.display = DisplayStyle.None;
+                foreach (GameObject scissor in HP)
+        {
+            scissor.SetActive(false);
+        }
     }
 
 }

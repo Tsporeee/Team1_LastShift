@@ -19,13 +19,13 @@ public class DreamInteraction : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame && inRange && canFlash)
+        if ((Keyboard.current.eKey.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame) && inRange && canFlash)
         {
             flash.StartFlash(gradiantDuration, gradiantDuration/2, 0.75f, Color.skyBlue);
             player.disableMovement(); 
             canFlash = false;
 
-            StartCoroutine(dreamStart(delayPanel));
+            StartCoroutine(DreamStart(delayPanel));
         }
     }
 
@@ -37,28 +37,38 @@ public class DreamInteraction : MonoBehaviour
         }
     }
 
-IEnumerator dreamStart(float delay)
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inRange = false;
+        }
+    }
+
+IEnumerator DreamStart(float delay)
     {
         // wait beforemaking panel visible
         yield return new WaitForSeconds(delay);
        
-        dreamPanel.SetActive(true);
-        GUI.enablePanel();
+        // dreamPanel.SetActive(true);
+        GUI.EnablePanel();
         canFlash = false;
     }
 
-    IEnumerator dreamClose(float delay)
+    IEnumerator DreamClose(float delay)
     {
         // wait beforemaking panel go away
+        flash.BlockInteraction();
         yield return new WaitForSeconds(delay);
-        GUI.disablePanel();
+        GUI.DisablePanel();
+        flash.StopBlockInteraction();
     }
 
-    public void endDream(Color color)
+    public void EndDream(Color color)
     {
         flash.StartFlash(gradiantDuration, gradiantDuration/2, 0.75f, color);
         player.enableMovement();
 
-        StartCoroutine(dreamClose(delayPanel));
+        StartCoroutine(DreamClose(delayPanel));
     }
 }

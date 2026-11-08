@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PointTracker : MonoBehaviour
 {
@@ -8,7 +10,20 @@ public class PointTracker : MonoBehaviour
 
     void Update()
     {
-        
+        if (points >= pointsToWin && failureCount == 0)
+        {
+            StartCoroutine(WaitOne());
+        }
+        else if (points >= pointsToWin && failureCount > 0)
+        {
+            StartCoroutine(WaitTwo());
+            SceneManager.LoadScene(2);
+        }
+        else if (points >= pointsToWin && failureCount == pointsToWin)
+        {
+            StartCoroutine(WaitThree());
+            SceneManager.LoadScene(3);
+        }
     }
 
     public void incrementPoints()
@@ -21,5 +36,21 @@ public class PointTracker : MonoBehaviour
     {
         failureCount++;
         Debug.Log("u messed up big bro");
+    }
+
+    IEnumerator WaitOne()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(1);
+    }
+        IEnumerator WaitTwo()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(2);
+    }
+        IEnumerator WaitThree()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(3);
     }
 }

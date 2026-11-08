@@ -18,5 +18,6 @@
             </Bindings>
         </ui:Button>
     </ui:VisualElement>
+    <ui:Image source="project://database/Assets/UI/UIAssets/DreamOne/poster.png?fileID=21300000&amp;guid=7539b42c45f5d4345b8f23c9dae4a554&amp;type=3#poster" scale-mode="ScaleToFit" style="height: 410px; width: 396px; scale: 1.2 1.2 1.2; translate: 25px 100px; background-color: rgba(0, 0, 0, 0);"/>
     <ui:ListView/>
 </ui:UXML>

@@ -58,4 +58,15 @@ public class FlashTransition : MonoBehaviour
         // ensure alpha is set to 0
         _image.color = new Color32(0, 0, 0, 0);
     }
+
+    public void BlockInteraction()
+    {
+        _image.raycastTarget = true;
+    }
+
+    public void StopBlockInteraction()
+    {
+        _image.raycastTarget = false;
+    }
+
 }
