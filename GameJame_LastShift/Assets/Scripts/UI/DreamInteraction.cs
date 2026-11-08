@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class DreamInteraction : MonoBehaviour
 {
     public GameObject dreamPanel;
+    public DreamGUI GUI;
     public Movement player;
     public float delayPanel = 2f;
 
@@ -12,25 +13,32 @@ public class DreamInteraction : MonoBehaviour
     public float gradiantDuration;
     public FlashTransition flash;
 
-    private bool inRange = false;   
+    private bool inRange = false;  
+    private bool canFlash = true; 
     private bool panelOpen = false;
+    Coroutine _currentRoutine = null;
+    
 
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame && inRange && !panelOpen)
+        if (Keyboard.current.eKey.wasPressedThisFrame && inRange && !panelOpen && canFlash)
         {
             flash.StartFlash(gradiantDuration, gradiantDuration/2, 0.75f, Color.skyBlue);
-            player.disableMovement();
+            player.disableMovement(); 
             panelOpen = true;
-            StartCoroutine(dreamStart(delayPanel));
+            canFlash = false;
+
+            _currentRoutine = StartCoroutine(dreamStart(delayPanel));
         }
         
-        else if (Keyboard.current.eKey.wasPressedThisFrame && panelOpen)
+        else if (Keyboard.current.eKey.wasPressedThisFrame && panelOpen && canFlash)
         {   
             flash.StartFlash(gradiantDuration, gradiantDuration/2, 0.75f, Color.yellow);
             player.enableMovement();
             panelOpen = false;
-            StartCoroutine(dreamClose(delayPanel));
+            canFlash = false;
+
+            _currentRoutine = StartCoroutine(dreamClose(delayPanel));
         }
 
     }
@@ -49,13 +57,15 @@ IEnumerator dreamStart(float delay)
         yield return new WaitForSeconds(delay);
        
         dreamPanel.SetActive(true);
+        GUI.enablePanel();
+        canFlash = true;
     }
 
     IEnumerator dreamClose(float delay)
     {
         // wait beforemaking panel go away
         yield return new WaitForSeconds(delay);
-       
-        dreamPanel.SetActive(false);
+        GUI.disablePanel();
+        canFlash = true;
     }
 }

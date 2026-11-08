@@ -1,39 +1,55 @@
-using TMPro.EditorUtilities;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class DreamGUI : MonoBehaviour
 {
-    private PanelRenderer panelRenderer; 
-    private Button correctItem;
-    private Button[] incorrectItems;
-    private int uiVersion = 0;
-
+    public int amountIncorrect; 
+    private UIDocument _doc; 
+    private Button _correctItem;
+    
     void Awake()
     {
-        GetComponent<PanelRenderer>().RegisterUIReloadCallback(OnUIReload);
+        _doc = GetComponent<UIDocument>();
+
+        _correctItem = _doc.rootVisualElement.Q("CorrectItem") as Button;
+        _correctItem.RegisterCallback<ClickEvent>(OnCorrectItemClick);
+
+        string buttonNamePrefix = "Incorrect";
+        List<Button> incorrectButtons = _doc.rootVisualElement.Query<Button>()
+            .Where(b => b.name != null && b.name.StartsWith(buttonNamePrefix))
+            .ToList();
+
+        foreach (Button incorrect in incorrectButtons)
+        {
+            incorrect.RegisterCallback<ClickEvent>(OnIncorrectItemClick);
+        }
+
+       _doc.rootVisualElement.style.display = DisplayStyle.None;
     }
 
-     private void OnUIReload(PanelRenderer panelRenderer, VisualElement root, int version)
+    private void OnDisable()
     {
-        // The version number only changes when the UI actually reloads, 
-        // so this checks prevents duplicated elements.
-        if (uiVersion == version)
-            return;
-        uiVersion = version;
-        correctItem = root.Q<Button>("correctItem");
-        correctItem.RegisterCallback<ClickEvent>(correctItemClicked);
+        _correctItem.UnregisterCallback<ClickEvent>(OnCorrectItemClick);
     }
 
-    private void OnEnable()
+    private void OnCorrectItemClick(ClickEvent evt)
     {
-
+        Debug.Log("good job, Colin!");
     }
-
-    private void correctItemClicked(ClickEvent evt)
+    private void OnIncorrectItemClick(ClickEvent evt)
     {
-        Debug.Log("THAT WAS RIGHT!");
+        Debug.Log("fuck you Colin");
     }
 
+    public void enablePanel()
+    {
+         _doc.rootVisualElement.style.display = DisplayStyle.Flex;
+    }
+
+    public void disablePanel()
+    {
+        _doc.rootVisualElement.style.display = DisplayStyle.None;
+    }
 
 }
