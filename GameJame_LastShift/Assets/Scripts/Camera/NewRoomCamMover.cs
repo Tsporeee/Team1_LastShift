@@ -1,5 +1,4 @@
 using System.Collections;
-using NUnit.Framework;
 using UnityEngine;
 
 public class NewRoomCamMover : MonoBehaviour
@@ -8,6 +7,7 @@ public class NewRoomCamMover : MonoBehaviour
     public Camera cam;
     public Transform newRoomTransform;
     public Transform oldRoomTransform;
+    public GameObject player;
     private bool passed = false;
     private float lerpDuration = 1;
     
@@ -30,6 +30,7 @@ public class NewRoomCamMover : MonoBehaviour
     IEnumerator moveCamera()
     {
         Vector3 positionThisFrame = cam.transform.position; 
+        player.transform.position = new Vector3(player.transform.position.x + 0.75f, player.transform.position.y, player.transform.position.z);
         for (float t = 0; t <= lerpDuration; t += Time.deltaTime)
         {
             cam.transform.position = Vector3.Lerp (positionThisFrame, newRoomTransform.position, t / lerpDuration);
@@ -42,6 +43,7 @@ public class NewRoomCamMover : MonoBehaviour
     IEnumerator moveCameraBack()
     {
         Vector3 positionThisFrame = cam.transform.position; 
+        player.transform.position = new Vector3(player.transform.position.x - 0.75f, player.transform.position.y, player.transform.position.z);
         for (float t = 0; t <= lerpDuration; t += Time.deltaTime)
         {
             cam.transform.position = Vector3.Lerp (positionThisFrame, oldRoomTransform.position, t / lerpDuration);
@@ -49,7 +51,6 @@ public class NewRoomCamMover : MonoBehaviour
             // wait until the next frame
             yield return null;
         }
-
     }
 }
 

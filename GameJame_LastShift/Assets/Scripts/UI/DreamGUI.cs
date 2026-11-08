@@ -9,6 +9,7 @@ public class DreamGUI : MonoBehaviour
 
     public UIDocument doc; 
     public GameObject[] HP;
+    public GameObject mommento;
     private Button _correctItem;
     
     private int wrongCount;
@@ -76,6 +77,7 @@ public class DreamGUI : MonoBehaviour
     public void DisablePanel()
     {
         doc.rootVisualElement.style.display = DisplayStyle.None;
+        mommento.SetActive(true);
                 foreach (GameObject scissor in HP)
         {
             scissor.SetActive(false);

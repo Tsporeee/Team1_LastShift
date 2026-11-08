@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     private Rigidbody rb;
     private Collider playerCollider;
-    // private Animator animator;
+    private Animator animator;
 
     // Horizontal Movement
     public float walkSpeed = 3;
@@ -22,13 +22,13 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         playerCollider = GetComponent<Collider>();
-        // animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         rb.freezeRotation = true;
     }
 
     void Update()
     {   
-        // UpdateAnimations();
+        UpdateAnimations();
 
         if (canMove)
         {
@@ -51,11 +51,11 @@ public class Movement : MonoBehaviour
             // Rotation
             if (isRight)
             {
-                transform.localEulerAngles = new Vector3(0f, 90f, 0f);
+                transform.localEulerAngles = new Vector3(0f, 180f, 0f);
             }
             else
             {
-                transform.localEulerAngles = new Vector3(0f, 270f, 0f);
+                transform.localEulerAngles = new Vector3(0f, 0f, 0f);
             }
         }
 
@@ -95,10 +95,10 @@ public class Movement : MonoBehaviour
         canMove = true;
     }
 
-    // private void UpdateAnimations()
-    // {
-    //     float animationSpeed = Mathf.Abs(horizontalInput) * currentSpeed;
-    //     if (!canMove) animationSpeed = 0;
-    //     animator.SetFloat("Speed", animationSpeed);
-    // }
+    private void UpdateAnimations()
+    {
+        float animationSpeed = Mathf.Abs(horizontalInput) * currentSpeed;
+        if (!canMove) animationSpeed = 0;
+        animator.SetFloat("Speed", animationSpeed);
+    }
 }
