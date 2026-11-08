@@ -55,11 +55,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Max: 2
+    - _Max: 1
     - _Min: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ShadeSize: 0.1
+    - _ShadeSize: 0.3
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

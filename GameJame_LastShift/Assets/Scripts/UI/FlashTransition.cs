@@ -27,8 +27,6 @@ public class FlashTransition : MonoBehaviour
             StopCoroutine(_currentFlashRoutine);
         }
         _currentFlashRoutine = StartCoroutine(Flash(secondsForFlashIn, secondsForFlashOut, maxAlpha));
-
-
     }
 
     IEnumerator Flash(float secondsForFlashIn, float secondsForFlashOut, float maxAlpha)
@@ -59,6 +57,5 @@ public class FlashTransition : MonoBehaviour
 
         // ensure alpha is set to 0
         _image.color = new Color32(0, 0, 0, 0);
-
     }
 }

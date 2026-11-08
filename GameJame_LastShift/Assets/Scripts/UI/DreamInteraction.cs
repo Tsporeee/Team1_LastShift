@@ -15,32 +15,18 @@ public class DreamInteraction : MonoBehaviour
 
     private bool inRange = false;  
     private bool canFlash = true; 
-    private bool panelOpen = false;
-    Coroutine _currentRoutine = null;
     
 
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame && inRange && !panelOpen && canFlash)
+        if (Keyboard.current.eKey.wasPressedThisFrame && inRange && canFlash)
         {
             flash.StartFlash(gradiantDuration, gradiantDuration/2, 0.75f, Color.skyBlue);
             player.disableMovement(); 
-            panelOpen = true;
             canFlash = false;
 
-            _currentRoutine = StartCoroutine(dreamStart(delayPanel));
+            StartCoroutine(dreamStart(delayPanel));
         }
-        
-        else if (Keyboard.current.eKey.wasPressedThisFrame && panelOpen && canFlash)
-        {   
-            flash.StartFlash(gradiantDuration, gradiantDuration/2, 0.75f, Color.yellow);
-            player.enableMovement();
-            panelOpen = false;
-            canFlash = false;
-
-            _currentRoutine = StartCoroutine(dreamClose(delayPanel));
-        }
-
     }
 
     void OnTriggerEnter(Collider other)
@@ -58,7 +44,7 @@ IEnumerator dreamStart(float delay)
        
         dreamPanel.SetActive(true);
         GUI.enablePanel();
-        canFlash = true;
+        canFlash = false;
     }
 
     IEnumerator dreamClose(float delay)
@@ -66,6 +52,13 @@ IEnumerator dreamStart(float delay)
         // wait beforemaking panel go away
         yield return new WaitForSeconds(delay);
         GUI.disablePanel();
-        canFlash = true;
+    }
+
+    public void endDream(Color color)
+    {
+        flash.StartFlash(gradiantDuration, gradiantDuration/2, 0.75f, color);
+        player.enableMovement();
+
+        StartCoroutine(dreamClose(delayPanel));
     }
 }

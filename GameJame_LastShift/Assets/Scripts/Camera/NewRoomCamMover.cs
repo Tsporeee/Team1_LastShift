@@ -6,7 +6,8 @@ public class NewRoomCamMover : MonoBehaviour
 
     public Camera cam;
     public Transform newRoomTransform;
-    public float lerpDuration = 2;
+    private float lerpDuration = 1;
+    Coroutine _currentMovement = null;
 
     // If the player enters, teleport the camera to the new room
     // Make it smooth and not jarring?? lol
@@ -14,13 +15,16 @@ public class NewRoomCamMover : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+             if(_currentMovement != null)
+        {
+            StopCoroutine(moveCamera());
+        }
             StartCoroutine(moveCamera());
         }
     }
 
     IEnumerator moveCamera()
     {
-
         Vector3 positionThisFrame = cam.transform.position; 
         for (float t = 0; t <= lerpDuration; t += Time.deltaTime)
         {

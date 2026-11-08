@@ -6,20 +6,14 @@
     transition-duration: 0s, 0.35s;
     transition-timing-function: ease, ease;
     transition-delay: 0s, 0s;
-    -unity-material: url("");
-    background-image: url("project://database/Assets/UI/Placeholder/buttom.png?fileID=2800000&guid=aa5a023d68d15054198071128f798f59&type=3#buttom");
-    translate: 1100px 325px;
 }
 
 .interactableObject:hover {
-    background-image: url("project://database/Assets/UI/Placeholder/agg.png?fileID=2800000&guid=f6a960f70875999459aaca045e531d3b&type=3#agg");
-    background-color: rgb(123, 123, 123);
     scale: 1.1 1.1;
     transition-property: all;
     transition-duration: 0s;
     transition-timing-function: ease;
     transition-delay: 0s;
-    translate: 1100px 325px;
 }
 
 .BgPanel {
