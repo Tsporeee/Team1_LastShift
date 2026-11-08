@@ -14,15 +14,15 @@ public class PointTracker : MonoBehaviour
         {
             StartCoroutine(WaitOne());
         }
-        else if (points >= pointsToWin && failureCount > 0)
-        {
-            StartCoroutine(WaitTwo());
-            SceneManager.LoadScene(2);
-        }
         else if (points >= pointsToWin && failureCount == pointsToWin)
         {
             StartCoroutine(WaitThree());
             SceneManager.LoadScene(3);
+        }
+        else if (points >= pointsToWin && failureCount > 0)
+        {
+            StartCoroutine(WaitTwo());
+            SceneManager.LoadScene(2);
         }
     }
 
