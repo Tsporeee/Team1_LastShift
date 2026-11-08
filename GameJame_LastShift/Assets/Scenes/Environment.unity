@@ -837,7 +837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 589401615}
   m_Layer: 0
-  m_Name: NextRoomHitBoxes
+  m_Name: RoomHitBoxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -990,74 +990,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06202499bdcb4bf4a8c73a6d6c139af9, type: 3}
---- !u!1 &611370017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 611370018}
-  - component: {fileID: 611370020}
-  - component: {fileID: 611370019}
-  m_Layer: 0
-  m_Name: Room1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &611370018
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611370017}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.532, y: 0.336, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1428336455}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &611370019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611370017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92418588d663b1a4289ed2cdf4d5267e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewRoomCamMover
-  cam: {fileID: 1459393932}
-  newRoomTransform: {fileID: 1082282548}
---- !u!65 &611370020
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611370017}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5154293, y: 1, z: 3.0548856}
-  m_Center: {x: -0.040738557, y: 0, z: -0.08754504}
 --- !u!1001 &665796631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1719,7 +1651,7 @@ GameObject:
   - component: {fileID: 982980500}
   - component: {fileID: 982980499}
   m_Layer: 0
-  m_Name: Room3
+  m_Name: Room2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1754,6 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewRoomCamMover
   cam: {fileID: 1459393932}
   newRoomTransform: {fileID: 369633967}
+  oldRoomTransform: {fileID: 1136789954}
 --- !u!65 &982980500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1761,142 +1694,6 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982980497}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5154293, y: 1, z: 3.0548856}
-  m_Center: {x: -0.040738557, y: 0, z: -0.08754504}
---- !u!1 &1012966496
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1012966497}
-  - component: {fileID: 1012966499}
-  - component: {fileID: 1012966498}
-  m_Layer: 0
-  m_Name: Room3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1012966497
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012966496}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.21, y: 0.336, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1428336455}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1012966498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012966496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92418588d663b1a4289ed2cdf4d5267e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewRoomCamMover
-  cam: {fileID: 1459393932}
-  newRoomTransform: {fileID: 369633967}
---- !u!65 &1012966499
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012966496}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5154293, y: 1, z: 3.0548856}
-  m_Center: {x: -0.040738557, y: 0, z: -0.08754504}
---- !u!1 &1053362146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1053362147}
-  - component: {fileID: 1053362149}
-  - component: {fileID: 1053362148}
-  m_Layer: 0
-  m_Name: Room2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1053362147
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053362146}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.31, y: 0.336, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1428336455}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1053362148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053362146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92418588d663b1a4289ed2cdf4d5267e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewRoomCamMover
-  cam: {fileID: 1459393932}
-  newRoomTransform: {fileID: 1136789954}
---- !u!65 &1053362149
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053362146}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1923,7 +1720,7 @@ GameObject:
   - component: {fileID: 1056631339}
   - component: {fileID: 1056631338}
   m_Layer: 0
-  m_Name: Room4
+  m_Name: Room3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1958,6 +1755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewRoomCamMover
   cam: {fileID: 1459393932}
   newRoomTransform: {fileID: 1328115987}
+  oldRoomTransform: {fileID: 369633967}
 --- !u!65 &1056631339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2192,7 +1990,7 @@ Transform:
   m_GameObject: {fileID: 1151802064}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.0000029504295, z: -0, w: 1}
-  m_LocalPosition: {x: -30.586025, y: 0.695, z: 10.45}
+  m_LocalPosition: {x: -38.49, y: 0.695, z: 10.45}
   m_LocalScale: {x: 0.42499194, y: 0.42499194, z: 0.42499194}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2559,40 +2357,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1428336454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1428336455}
-  m_Layer: 0
-  m_Name: PreviousRoomHitBoxes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1428336455
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428336454}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.0000029504295, z: -0, w: 1}
-  m_LocalPosition: {x: -30.586025, y: -0.069, z: 10.45}
-  m_LocalScale: {x: 0.42499194, y: 0.42499194, z: 0.42499194}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 611370018}
-  - {fileID: 1053362147}
-  - {fileID: 1012966497}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1457521283
@@ -3100,9 +2864,9 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
-  m_PanelSettings: {fileID: 11400000, guid: 9fad01927f6bace4fa83ab4be7eaf286, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 324fb663f8a02724b8fb59218ed622ad, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 714c25b3021ceaf4ba2bd3ae7a11b162, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: f134a1a7effce854582f17abc06905f8, type: 3}
   m_SortingOrder: 0
   m_Position: 0
   m_WorldSpaceSizeMode: 1
@@ -3914,7 +3678,7 @@ GameObject:
   - component: {fileID: 2052853760}
   - component: {fileID: 2052853759}
   m_Layer: 0
-  m_Name: Room2
+  m_Name: Room1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3929,7 +3693,7 @@ Transform:
   m_GameObject: {fileID: 2052853757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.18, y: 0.336, z: 0}
+  m_LocalPosition: {x: 16.185, y: 0.336, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3949,6 +3713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewRoomCamMover
   cam: {fileID: 1459393932}
   newRoomTransform: {fileID: 1136789954}
+  oldRoomTransform: {fileID: 1082282548}
 --- !u!65 &2052853760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4641,7 +4406,6 @@ SceneRoots:
   - {fileID: 1572584446}
   - {fileID: 542503902}
   - {fileID: 1151802070}
-  - {fileID: 1428336455}
   - {fileID: 589401615}
   - {fileID: 1082282548}
   - {fileID: 1136789954}
