@@ -347,9 +347,10 @@ MonoBehaviour:
   - Take your Atropos Shears and find those who remain... hanging on by a thread.
   - Be warned; to release the binds of those tethered to the mortal plane, you must
     explore a most cherished memory... find a memento; a sentimental item.
-  - Use the words of the ascending to guide your selection. And Mori... choose wisely.
-    I'll be watching.
+  - Decipher the memory to guide your selection; choose wisely, for a soul can only
+    handle three attempts.
   - Best of luck; remember - we all must die.
+  isEnd: 0
   textSpeed: 0.02
 --- !u!114 &61734915
 MonoBehaviour:
@@ -8424,8 +8425,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.5220914, y: 2.2856262, z: 1.2088983}
-  m_Center: {x: 1.2364264, y: 0.3467181, z: 0.59864986}
+  m_Size: {x: 4.5220914, y: 1.832058, z: 1.2088983}
+  m_Center: {x: 1.236424, y: 0.119935095, z: 0.5986496}
 --- !u!1001 &1458534702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10204,7 +10205,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 032b98f016736a84ebd42ee28e9aef1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.217
+      value: -37.708
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 032b98f016736a84ebd42ee28e9aef1b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10216,27 +10217,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 032b98f016736a84ebd42ee28e9aef1b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999898
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 032b98f016736a84ebd42ee28e9aef1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.004514948
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 032b98f016736a84ebd42ee28e9aef1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 032b98f016736a84ebd42ee28e9aef1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 032b98f016736a84ebd42ee28e9aef1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.517
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 032b98f016736a84ebd42ee28e9aef1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 032b98f016736a84ebd42ee28e9aef1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
