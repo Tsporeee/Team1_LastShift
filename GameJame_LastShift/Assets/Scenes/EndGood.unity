@@ -275,6 +275,8 @@ MonoBehaviour:
   - I am proud to see a young apprentice such as yourself so suited to the role...
     many struggle where you shined
   - Take your final bow; I look forward to your assistance in the next preformance.
+  - All momentos found
+  isEnd: 1
   textSpeed: 0.02
 --- !u!114 &61734915
 MonoBehaviour:

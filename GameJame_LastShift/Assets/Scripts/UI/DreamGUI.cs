@@ -52,16 +52,15 @@ public class DreamGUI : MonoBehaviour
 
     private void OnCorrectItemClick(ClickEvent evt)
     {
-        Debug.Log("good job, Colin!");
         tracker.incrementPoints();
         interaction.EndDream(Color.yellow);
     }
     private void OnIncorrectItemClick(ClickEvent evt)
     {
-        Debug.Log("fuck you Colin");
         wrongCount++;
         Button pressedButton = evt.target as Button;
         pressedButton.SetEnabled(false);
+        pressedButton.style.visibility = Visibility.Hidden;
         HP[HP.Length - wrongCount].SetActive(false);
     }
 
@@ -86,5 +85,4 @@ public class DreamGUI : MonoBehaviour
             scissor.SetActive(false);
         }
     }
-
 }

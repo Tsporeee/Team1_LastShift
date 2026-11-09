@@ -3,12 +3,14 @@ using TMPro;
 using System.Collections;
 using UnityEngine.InputSystem;
 using Unity.Properties;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public Movement player;
     public string[] lines;
+    public bool isEnd;
     public float textSpeed;
     private int index;
 
@@ -63,6 +65,10 @@ public class Dialogue : MonoBehaviour
         else
         {
             player.enableMovement();
+            if (isEnd)
+            {
+                SceneManager.LoadScene(5);
+            }
             gameObject.SetActive(false); 
         }
     }

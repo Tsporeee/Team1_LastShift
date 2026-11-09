@@ -277,6 +277,8 @@ MonoBehaviour:
     you are not a jester, but a conductor. Create a symphony
   - Decipher the words of the ascending to determine  what their memento is.
   - Please - try again.
+  - 0 momentos found
+  isEnd: 1
   textSpeed: 0.02
 --- !u!114 &61734915
 MonoBehaviour:

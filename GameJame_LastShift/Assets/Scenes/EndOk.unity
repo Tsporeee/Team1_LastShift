@@ -177,6 +177,8 @@ MonoBehaviour:
     role.
   - The burden of death weighs heavy on us all... carry this heaviness as they take
     their final bows.
+  - Not all momentos were found, was there a hint you missed?
+  isEnd: 1
   textSpeed: 0.02
 --- !u!114 &61734915
 MonoBehaviour:
