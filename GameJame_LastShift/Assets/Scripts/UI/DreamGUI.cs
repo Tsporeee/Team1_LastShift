@@ -77,8 +77,11 @@ public class DreamGUI : MonoBehaviour
     public void DisablePanel()
     {
         doc.rootVisualElement.style.display = DisplayStyle.None;
-        mommento.SetActive(true);
-                foreach (GameObject scissor in HP)
+        if (hasFailed == false)
+        {
+            mommento.SetActive(true);
+        }
+        foreach (GameObject scissor in HP)
         {
             scissor.SetActive(false);
         }

@@ -17,12 +17,10 @@ public class PointTracker : MonoBehaviour
         else if (points >= pointsToWin && failureCount == pointsToWin)
         {
             StartCoroutine(WaitThree());
-            SceneManager.LoadScene(3);
         }
         else if (points >= pointsToWin && failureCount > 0)
         {
             StartCoroutine(WaitTwo());
-            SceneManager.LoadScene(2);
         }
     }
 
@@ -41,16 +39,16 @@ public class PointTracker : MonoBehaviour
     IEnumerator WaitOne()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
         IEnumerator WaitTwo()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
         IEnumerator WaitThree()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }

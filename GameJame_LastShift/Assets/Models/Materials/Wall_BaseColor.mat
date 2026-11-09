@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Floor_Mat
+  m_Name: Wall_BaseColor
   m_Shader: {fileID: -6465566751694194690, guid: ecb7ed0d6d35eb846a5ca2eb4eed8e04, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,11 +25,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: eacbebfd37ccf4a4ca946ad4636f0a5e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 805111b37afcfb6458ef8f666cb13e23, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseTexture:
-        m_Texture: {fileID: 2800000, guid: eacbebfd37ccf4a4ca946ad4636f0a5e, type: 3}
+        m_Texture: {fileID: 2800000, guid: a19c9d3fbe478f54fb8795a4dfe23ccf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -53,7 +53,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: eacbebfd37ccf4a4ca946ad4636f0a5e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 805111b37afcfb6458ef8f666cb13e23, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -129,7 +129,7 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &6005538364646899962
+--- !u!114 &497442963308835876
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

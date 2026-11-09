@@ -14,6 +14,7 @@ public class DreamInteraction : MonoBehaviour
     public FlashTransition flash;
 
     public GameObject scissors; 
+    public GameObject E;
     public SpriteRenderer scissorRenderer;
     public float targetScissorMove;
     public float scissorSpeed = 1;
@@ -42,6 +43,10 @@ public class DreamInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = true;
+            if (canFlash)
+            {
+                E.SetActive(true);
+            }
         }
     }
 
@@ -50,12 +55,14 @@ public class DreamInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
+            E.SetActive(false);
         }
     }
 
 IEnumerator DreamStart(float delay)
     {
         scissors.SetActive(true);
+        E.SetActive(false);
         StartCoroutine(scissorsCut());
         flash.StartFlash(gradiantDuration, gradiantDuration/2, 0.75f, Color.skyBlue);
 
